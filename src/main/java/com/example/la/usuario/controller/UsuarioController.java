@@ -1,6 +1,5 @@
 package com.example.la.usuario.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -12,7 +11,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -68,7 +66,6 @@ public class UsuarioController {
 		List<UsuarioInterface> lista = page.getContent();
 		logger.info(""+lista.size());
 		paginaUsuario.setUsuarios(page.getContent());
-		//paginaUsuario.getUsuarios().addAll();
 		paginaUsuario.setTotalRegistros(page.getTotalElements());
 		
 		return ResponseEntity.ok(paginaUsuario);
@@ -83,18 +80,6 @@ public class UsuarioController {
 	public ResponseEntity<?> getRoles(){
 		return ResponseEntity.ok(rolService.obtenerRoles());
 	}
-	
-	/*@PostMapping("/crear")
-	public ResponseEntity<?> crearUsuario(@RequestBody Usuario usuario){
-		
-		Usuario usuarioDB = usuarioService.crearUsuario(usuario);
-		
-		if(usuarioDB==null) {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
-		usuario.setPassword(null);
-		return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
-	}*/
 	
 	@PostMapping("/rol")
 	public ResponseEntity<?> crearRol(@RequestBody Rol rol){
