@@ -28,6 +28,9 @@ import com.example.la.common.usuario.service.RolService;
 import com.example.la.common.usuario.service.UsuarioService;
 import com.example.la.usuario.domain.RequestImagen;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
 @RestController
 public class UsuarioController {
 
@@ -81,6 +84,7 @@ public class UsuarioController {
 		return ResponseEntity.ok(rolService.obtenerRoles());
 	}
 	
+	@SecurityRequirement(name = "Bearer Authentication")
 	@PostMapping("/rol")
 	public ResponseEntity<?> crearRol(@RequestBody Rol rol){
 		Rol rolNuevo = rolService.crearRol(rol);
@@ -92,13 +96,11 @@ public class UsuarioController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(rolNuevo);
 	}
 	
-	
+	@SecurityRequirement(name = "Bearer Authentication")
 	@PutMapping("/actualizar/{id}")
 	public ResponseEntity<?> actualizarUsuario(@PathVariable Long id,@RequestBody Usuario usuario){
 		usuario.setId(id);
-		logger.info("ROLES"+usuario.toString());
 		if(usuario.getPassword()!=null && !usuario.getPassword().isEmpty()) {
-			logger.info("SETPASSS");
 			usuario.setPassword(bcryp.encode(usuario.getPassword()));
 		}		
 		
@@ -110,6 +112,7 @@ public class UsuarioController {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
+	@SecurityRequirement(name = "Bearer Authentication")
 	@PutMapping("/actualizarImagen/{id}")
 	public ResponseEntity<?> actualizarImagen(@PathVariable Long id,@RequestBody RequestImagen request){
 		Usuario usuarioAct=usuarioService.actualizaImagenUsuario(id, request.getImagen());
@@ -120,6 +123,7 @@ public class UsuarioController {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
+	@SecurityRequirement(name = "Bearer Authentication")
 	@PutMapping("/rol/actualizar/{id}")
 	public ResponseEntity<?> actualizarRol(@PathVariable Long id,@RequestBody Rol rol){
 		rol.setId(id);
@@ -132,13 +136,14 @@ public class UsuarioController {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
-	
+	@SecurityRequirement(name = "Bearer Authentication")
 	@DeleteMapping("/eliminar/{id}")
 	public ResponseEntity<?> deleteUsuario(@PathVariable Long id){
 		usuarioService.eliminarUsuario(id);
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}
 	
+	@SecurityRequirement(name = "Bearer Authentication")
 	@DeleteMapping("/rol/eliminar/{id}")
 	public ResponseEntity<?> eliminarRol(@PathVariable Long id){
 		rolService.eliminarRol(id);

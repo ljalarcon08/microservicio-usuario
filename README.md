@@ -16,3 +16,7 @@ Contiene controlador para administracion de usuarios:
 1. Crear ejecutable: mvn clean package
 2. java -jar microservicio-usuario.jar
 3. Desde navegador, ingresar a http://localhost:8088
+
+##Swagger
+
+http://localhost:8088/usuario/swagger-ui.html

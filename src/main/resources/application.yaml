@@ -4,3 +4,14 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     preferIpAddress: true
+
+springdoc:
+  api-docs:
+    path: /usuario/v1/api-docs
+  swagger-ui:
+    path: /usuario/swagger-ui.html
+
+openapi:
+  service:
+    title: usuario
+    version: 1.0.0
