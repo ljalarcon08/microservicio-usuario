@@ -66,8 +66,6 @@ public class UsuarioController {
 		Pageable pageable=PageRequest.of(pagina, largo);
 		Page<UsuarioInterface> page=usuarioService.findAllUsuariosPage(pageable);
 		PaginaUsuario paginaUsuario=new PaginaUsuario();
-		List<UsuarioInterface> lista = page.getContent();
-		logger.info(""+lista.size());
 		paginaUsuario.setUsuarios(page.getContent());
 		paginaUsuario.setTotalRegistros(page.getTotalElements());
 		
