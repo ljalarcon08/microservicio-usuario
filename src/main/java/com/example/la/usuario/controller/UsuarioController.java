@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.la.common.usuario.entity.Rol;
 import com.example.la.common.usuario.entity.Usuario;
-import com.example.la.common.usuario.proyection.PaginaUsuario;
+import com.example.la.usuario.domain.PaginaUsuario;
 import com.example.la.common.usuario.proyection.UsuarioInterface;
 import com.example.la.common.usuario.service.RolService;
 import com.example.la.common.usuario.service.UsuarioService;
