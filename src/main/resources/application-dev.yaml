@@ -2,13 +2,6 @@ spring:
   application:
     name: usuario
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    preferIpAddress: true
-
 springdoc:
   api-docs:
     path: /usuario/v1/api-docs
@@ -19,3 +12,10 @@ openapi:
   service:
     title: usuario
     version: 1.0.0
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
