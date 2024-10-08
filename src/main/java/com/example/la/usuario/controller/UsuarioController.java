@@ -2,6 +2,8 @@ package com.example.la.usuario.controller;
 
 import java.util.List;
 
+import com.example.la.soap.Continent;
+import com.example.la.usuario.service.ServicioPaises;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -147,4 +149,5 @@ public class UsuarioController {
 		rolService.eliminarRol(id);
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}
+
 }
