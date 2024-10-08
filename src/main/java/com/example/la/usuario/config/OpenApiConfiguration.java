@@ -1,7 +1,11 @@
 package com.example.la.usuario.config;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
+import com.example.la.soap.CountryInfoService;
+import com.example.la.soap.CountryInfoServiceSoapType;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,5 +34,11 @@ public class OpenApiConfiguration {
 	            .servers(List.of(new Server().url(""),new Server().url("http://localhost:8090/api/usuario")))
 	            .info(new Info().title(serviceTitle).version(serviceVersion));
 	}
-	
+
+	@Bean
+	public CountryInfoServiceSoapType getCountryInfoServiceSoapType() throws MalformedURLException{
+		URL url=new URL("http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso");
+		CountryInfoService countryInfoService= new CountryInfoService(url);
+		return countryInfoService.getCountryInfoServiceSoap();
+	}
 }

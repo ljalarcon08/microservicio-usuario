@@ -69,7 +69,7 @@ public class TestUsuarioController {
 
         Usuario usuarioAct = objectMapper.readValue(json, Usuario.class);
 
-        Assert.notNull(usuarioAct, "OK");
+        Assert.notNull(usuarioAct, "error");
     }
 
     @Test
@@ -89,7 +89,7 @@ public class TestUsuarioController {
 
         Usuario usuarioAct = objectMapper.readValue(json, Usuario.class);
 
-        Assert.notNull(usuarioAct, "OK");
+        Assert.notNull(usuarioAct, "error");
     }
 
     @Test
@@ -110,7 +110,7 @@ public class TestUsuarioController {
 
         Usuario usuarioAct = objectMapper.readValue(json, Usuario.class);
 
-        Assert.notNull(usuarioAct, "OK");
+        Assert.notNull(usuarioAct, "error");
     }
 
     @Test
@@ -129,7 +129,7 @@ public class TestUsuarioController {
 
         String json = result.getResponse().getContentAsString();
 
-        Assert.state(!StringUtils.hasLength(json),"OK");
+        Assert.state(!StringUtils.hasLength(json),"error");
     }
 
     @Test
@@ -147,7 +147,7 @@ public class TestUsuarioController {
 
         Rol rolAct = objectMapper.readValue(json, Rol.class);
 
-        Assert.notNull(rolAct,"OK");
+        Assert.notNull(rolAct,"error");
     }
 
     @Test
@@ -185,7 +185,7 @@ public class TestUsuarioController {
 
         Usuario usuarioAct = objectMapper.readValue(json, Usuario.class);
 
-        Assert.notNull(usuarioAct, "OK");
+        Assert.notNull(usuarioAct, "error");
     }
 
     @Test
@@ -208,7 +208,7 @@ public class TestUsuarioController {
 
         String json = result.getResponse().getContentAsString();
 
-        Assert.state(!StringUtils.hasLength(json),"OK");
+        Assert.state(!StringUtils.hasLength(json),"error");
     }
 
     @Test
@@ -227,7 +227,7 @@ public class TestUsuarioController {
 
         Usuario usuarioAct = objectMapper.readValue(json, Usuario.class);
 
-        Assert.notNull(usuarioAct, "OK");
+        Assert.notNull(usuarioAct, "error");
 
     }
 
@@ -245,7 +245,7 @@ public class TestUsuarioController {
 
         String json = result.getResponse().getContentAsString();
 
-        Assert.state(!StringUtils.hasLength(json),"OK");
+        Assert.state(!StringUtils.hasLength(json),"error");
 
     }
 

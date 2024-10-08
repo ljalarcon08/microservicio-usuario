@@ -72,7 +72,7 @@ public class UsuarioControllerTest {
         List<UsuarioInterfaceImpl> usuario = objectMapper.readValue(json, new TypeReference<List<UsuarioInterfaceImpl>>() {
         });
 
-        Assert.notNull(usuario, "OK");
+        Assert.notNull(usuario, "error");
     }
 
     @Test
@@ -83,7 +83,7 @@ public class UsuarioControllerTest {
 
         UsuarioInterfaceImpl usuario = objectMapper.readValue(json, UsuarioInterfaceImpl.class);
 
-        Assert.notNull(usuario, "OK");
+        Assert.notNull(usuario, "error");
     }
 
     @Test
@@ -95,7 +95,7 @@ public class UsuarioControllerTest {
         List<UsuarioInterfaceImpl> usuario = objectMapper.readValue(json, new TypeReference<List<UsuarioInterfaceImpl>>() {
         });
 
-        Assert.notNull(usuario, "OK");
+        Assert.notNull(usuario, "error");
     }
 
     @Test
@@ -106,7 +106,7 @@ public class UsuarioControllerTest {
 
         PaginaUsuarioImpl pagina = objectMapper.readValue(json, PaginaUsuarioImpl.class);
 
-        Assert.notNull(pagina, "OK");
+        Assert.notNull(pagina, "error");
     }
 
     @Test
@@ -118,7 +118,7 @@ public class UsuarioControllerTest {
         List<Rol> roles = objectMapper.readValue(json, new TypeReference<List<Rol>>() {
         });
 
-        Assert.notNull(roles, "OK");
+        Assert.notNull(roles, "error");
     }
 
     @Test
@@ -130,6 +130,6 @@ public class UsuarioControllerTest {
         List<Rol> roles = objectMapper.readValue(json, new TypeReference<List<Rol>>() {
         });
 
-        Assert.notNull(roles, "OK");
+        Assert.notNull(roles, "error");
     }
 }
