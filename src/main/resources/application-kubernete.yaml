@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: usuario
+
+springdoc:
+  api-docs:
+    path: /usuario/v1/api-docs
+  swagger-ui:
+    path: /usuario/swagger-ui.html
+
+openapi:
+  service:
+    title: usuario
+    version: 1.0.0
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://microservicio-eureka:8761/eureka/
+  instance:
+    preferIpAddress: true
